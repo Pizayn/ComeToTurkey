@@ -1,0 +1,189 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-warning card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">supervised_user_circle</i>
+                      </div>
+                      <p class="card-category">Users</p>
+                      <h3 class="card-title">{{dashboard.userCount}}
+                        
+                      </h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons text-danger">warning</i>
+                          <a href="javascript:void(0)">Last 24 Hours</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">thumb_up_alt</i>
+                      </div>
+                      <p class="card-category">Likes</p>
+                      <h3 class="card-title">{{dashboard.likeCount}}</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">date_range</i> Last 24 Hours
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-danger card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">local_post_office
+                        </i>
+                      </div>
+                      <p class="card-category">Messages</p>
+                      <h3 class="card-title">{{dashboard.messageCount}}</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">local_offer</i> Last 24 Hours
+                      </div>
+                  </div>    
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-info card-header-icon">
+                      <div class="card-icon">
+                          <i class="fa fa-twitter"></i>
+                      </div>
+                      <p class="card-category">Followers</p>
+                      <h3 class="card-title">{{dashboard.followerCount}}</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">update</i> Last 24 Hours
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">room</i>
+                    </div>
+                    <p class="card-category">Blogs</p>
+                    <h3 class="card-title">{{dashboard.blogCount}}
+                      
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons text-danger">warning</i>
+                        <a href="javascript:void(0)">Last 24 Hours</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">add_a_photo</i>
+                    </div>
+                    <p class="card-category">Photos</p>
+                    <h3 class="card-title">{{dashboard.photoCount}}</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">comment
+                      </i>
+                    </div>
+                    <p class="card-category">Comments</p>
+                    <h3 class="card-title">{{dashboard.commentCount}}</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">local_offer</i> Last 24 Hours
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">comment
+                      </i>
+                    </div>
+                    <p class="card-category">Destinations</p>
+                    <h3 class="card-title">{{dashboard.destinationCount}}</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">update</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="row">
+            <div class="col-lg-6 col-md-12">
+                    <lbd-chart
+                      [title]="'Top 3 Blog Post Categories'"
+                      [subtitle]="'Last Campaign Performance'"
+                      [chartClass]="'ct-perfect-fourth'"
+                      [chartType]="emailChartType"
+                      [chartData]="emailChartData"
+                      [legendItems]="emailChartLegendItems"
+                      [withHr]="true"
+                      [footerIconClass]="'fa fa-clock-o'"
+                      [footerText]="'Campaign sent 2 days ago'">
+                    </lbd-chart>
+                </div>
+          <div class="col-lg-6 col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-warning">
+                      <h4 class="card-title">Employees Stats</h4>
+                      <p class="card-category"></p>
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table table-hover">
+                          <thead class="text-warning">
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Photo</th>
+                             
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let item of dashboard.teams">
+                                  <td>{{item.teamId}}</td>
+                                  <td>{{item.firstName}} {{item.lastName}}</td>
+                                  <td>
+                                      <img src="{{item.photoUrl}}" style="width: 75px;height: 75px;">
+                                    </td>
+                              
+                              </tr>
+                            
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

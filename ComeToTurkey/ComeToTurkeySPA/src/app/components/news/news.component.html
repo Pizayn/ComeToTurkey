@@ -1,0 +1,17 @@
+<div class="site-section">
+  <div class="container">
+    
+    <div class="row mb-3 align-items-stretch">
+      <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" *ngFor="let item of news">
+        <div class="h-entry">
+          <img src="{{item.mainPhotoUrl}}" style="width: 540px;height: 360px;" alt="Image" class="img-fluid">
+          <h2 class="font-size-regular"><a [routerLink]="['/news/'+ item.newId]"  >{{item.title}}</a></h2>
+          <div class="meta mb-4"> <span class="mx-2"></span> {{item.createdTime | date}} <span class="mx-2"></span> <a href="#">News</a></div>
+          <p [innerHTML]="item.description"></p>
+        </div> 
+      </div>
+     
+    </div>
+   
+  </div>
+</div>

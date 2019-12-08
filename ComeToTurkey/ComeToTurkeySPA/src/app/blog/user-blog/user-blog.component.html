@@ -1,0 +1,169 @@
+
+
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="assets/blog/img/fav.png">
+
+  <!-- Start header Area -->
+  
+	<section class="banner-area relative">
+		<div class="overlay overlay-bg"></div>
+		<div class="container box_1170">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+							{{blogCategory}}
+					</h1>
+					<p class="text-white link-nav"><a [routerLink]="['/main']"  >Home </a> <span class="lnr lnr-arrow-right"></span> <a >
+							User Blogs</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- Start main body Area -->
+	
+	<div class="main-body section-gap">
+			<div class="col-md-4" style="margin-left: 300px;">
+					<button mat-raised-button class="btn btn-danger btn-block" (click)=" openAddBlogDiaolog()">Create Post</button>
+				</div>
+		<div class="container box_1170">
+			<div class="row">
+				<div class="col-lg-8 post-list">
+					<!-- Start Post Area -->
+					<section class="post-area">
+						<div class="row">
+							
+
+							<div class="col-lg-6 col-md-6" *ngFor="let item of blogs" style="width: 390px;height: 640px;">
+								<div class="single-post-item short">
+									<figure>
+										<img class="post-img img-fluid" style="width: 335px;height:335px;" src="{{item.mainPhotoUrl}}" alt="">
+									</figure>
+									<h3>
+										<a href="blog-details.html">{{item.title}}</a>
+									</h3>
+									<p [innerHTML]="item.description"></p>
+									<a [routerLink]="['/blogdetail/'+ item.blogId]"  class="primary-btn text-uppercase mt-15">continue Reading</a>
+									<div class="post-box">
+										<div class="d-flex">
+											<div>
+												<a href="#">
+													<img src="{{item.photoUrl}}" style="width: 50px;height: 50px;" alt="">
+												</a>
+											</div>
+											<div class="post-meta">
+												<div class="meta-head">
+													<a href="#">{{item.userFirstName}} {{item.userLastName}}</a>
+												</div>
+												<div class="meta-details">
+													<ul>
+														<li>
+															<a href="#">
+																<span class="lnr lnr-calendar-full"></span>
+																{{item.createdTime | date}}
+															</a>
+														</li>
+														<li>
+															<a >
+																	<mat-icon >comment
+																		</mat-icon>			
+																		{{item.commentsReceivedCount}}												
+															</a>
+														</li>
+														<li>
+																<a >
+																		<mat-icon>favorite
+																			</mat-icon>			
+																			{{item.blogLikesCount}}												
+																</a>
+															</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+							<div class="col-lg-12">
+									<pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [(ngModel)]="pagination.currentPage" 
+									[itemsPerPage]="pagination.itemsPerPage" (pageChanged)="pageChanged($event)"
+									previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+							</pagination>
+							</div>
+						</div>
+					</section>
+					<!-- Start Post Area -->
+				</div>
+
+
+				<div class="col-lg-4 sidebar"  style="height: 1850px;">
+					<div class="single-widget search-widget">
+						<form class="example" action="#" style="margin:auto;max-width:300px">
+							<input type="text" placeholder="Search Posts" name="search2">
+							<button type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+
+					<div class="single-widget protfolio-widget">
+						<img class="assets/blog/img-fluid" src="assets/blog/img/blog/user2.png" alt="">
+						<a href="#">
+							<h4>Charlie ALison Barber</h4>
+						</a>
+						<div class="desigmation">
+							<p>Senior blog writer</p>
+						</div>
+						<p>
+							Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend
+							money on boot camp whenyou can get. Boot camps have itssuppor ters andits detractors.
+						</p>
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+							<li><a href="#"><i class="fa fa-behance"></i></a></li>
+						</ul>
+					</div>
+
+					<div class="single-widget popular-posts-widget">
+						<h4 class="title">Popular Posts</h4>
+						<div class="blog-list ">
+							<div class="single-popular-post d-flex flex-row" *ngFor="let blog of blogs">
+								<div class="popular-thumb">
+									<img style="width: 100px;height: 60px;" class="assets/blog/img-fluid" src="{{blog.mainPhotoUrl}}" alt="">
+								</div>
+								<div class="popular-details">
+									<a [routerLink]="['/blogdetail/'+ blog.blogId]"  >
+										<h4>{{blog.title}}</h4>
+									</a>
+									<p class="text-uppercase">{{blog.createdTime | timeAgo}}</p>
+								</div>
+							</div>
+							
+							
+							
+						</div>
+					</div>
+
+					<div class="single-widget category-widget">
+						<h4 class="title">Post Categories</h4>
+						<ul>
+							<li *ngFor="let blogCategory of blogCategories">
+								<a 	 routerLinkActive="active"   (click)="loadBlogs(blogCategory.blogCategoryId)" class="justify-content-between align-items-center d-flex">
+									<p>{{blogCategory.blogCategoryName}}</p> <span></span>
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Start main body Area -->
+
+	<!-- start footer Area -->

@@ -1,0 +1,120 @@
+
+
+    
+        <div class="main-content" >
+          <div class="container-fluid">
+              <div class="row">
+                
+                      <div class="card">
+                          <div class="card-header card-header-danger">
+                              <h4 class="card-title">Complete your News </h4>
+                             
+                          </div>
+                          <div class="card-body">
+                              <form [formGroup]="blogForm" (submit)="createNews()">
+
+                                      <ckeditor formControlName="text"  name="editorData" [(ngModel)]="data.text" [config]="config"></ckeditor>
+
+                                   
+                                  <div class="row mt-3" >
+                                      <div class="col-md-12">
+                                        <mat-form-field class="example-full-width">
+                                       
+                                          <input formControlName="title"[(ngModel)]="data.title"  matInput placeholder="Title" type="text" name="title" >
+
+                                        </mat-form-field>
+                                      </div>
+                                  </div>
+                                 
+                                  <div class="row">
+                                      <div class="col-md-4" style="visibility: hidden;">
+                                        <mat-form-field class="example-full-width">
+                                          <input formControlName="mainPhotoUrl" [(ngModel)]="model2"  matInput placeholder="Email"  name="mainPhotoUrl">
+
+                                        </mat-form-field>
+                                      </div>
+                                     
+                                     
+                                  </div>
+                                  
+
+                                 
+                                  <button mat-raised-button type="submit" class="btn btn-danger pull-right">Create</button>
+                                  <div class="clearfix"></div>
+                                  <div class="row mt-3">
+
+                                    <div class="col-md-3">
+                                  
+                                        <h3 >Add Photos</h3>
+                                  
+                                        <div ng2FileDrop
+                                             [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                                             (fileOver)="fileOverBase($event)"
+                                             [uploader]="uploader"
+                                             class="card bg-faded p-3 text-center mb-3 my-drop-zone">
+                                             <i class="fa fa-upload fa-3x"></i>
+                                            Drop Photos Here
+                                        </div>
+                                  
+                                        Multiple
+                                        <input type="file" ng2FileSelect [uploader]="uploader" multiple/><br/>
+                                  
+                                        Single
+                                        <input type="file" ng2FileSelect [uploader]="uploader" />
+                                    </div>
+                                  
+                                    <div class="col-md-9" style="margin-bottom: 40px" *ngIf="uploader?.queue?.length">
+                                  
+                                        <h3>Upload queue</h3>
+                                        <p>Queue length: {{ uploader?.queue?.length }}</p>
+                                  
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th width="50%">Name</th>
+                                                <th>Size</th>
+                                                <th>Pro gress</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr *ngFor="let item of uploader.queue">
+                                                <td><strong>{{ item?.file?.name }}</strong></td>
+                                                <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                  
+                                        <div>
+                                            <div>
+                                                Queue progress:
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-success btn-s"
+                                                    (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                                                <span class="fa fa-upload"></span> Upload
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-s"
+                                                    (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                                                <span class="fa fa-ban"></span> Cancel
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-s"
+                                                    (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                                                <span class="fa fa-trash"></span> Remove
+                                            </button>
+                                        </div>
+                                  
+                                    </div>
+                                  
+                                  </div> 
+                              </form>
+                              
+                          </div>
+                      </div>
+            
+                 
+              </div>
+          </div>
+        </div>
+        

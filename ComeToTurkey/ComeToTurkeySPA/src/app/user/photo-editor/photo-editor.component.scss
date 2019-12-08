@@ -1,0 +1,22 @@
+img.img-thumbnail {
+    height: 100px;
+    min-width: 100px !important;
+    margin-bottom: 2px;
+}
+.nv-file-over {
+    border: dotted 3px red;
+}
+input[type=file] {
+    color: transparent;
+}
+.is-approved {
+    opacity: 0.2;
+}
+.centered {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 15px;
+   color:#E95420;
+ }

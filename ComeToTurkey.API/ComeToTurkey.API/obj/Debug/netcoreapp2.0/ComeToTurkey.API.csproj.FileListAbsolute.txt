@@ -1,0 +1,11 @@
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\bin\Debug\netcoreapp2.0\ComeToTurkey.API.deps.json
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\bin\Debug\netcoreapp2.0\ComeToTurkey.API.runtimeconfig.json
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\bin\Debug\netcoreapp2.0\ComeToTurkey.API.runtimeconfig.dev.json
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\bin\Debug\netcoreapp2.0\ComeToTurkey.API.dll
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\obj\Debug\netcoreapp2.0\ComeToTurkey.API.csprojAssemblyReference.cache
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\obj\Debug\netcoreapp2.0\ComeToTurkey.API.csproj.CoreCompileInputs.cache
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\obj\Debug\netcoreapp2.0\ComeToTurkey.API.AssemblyInfoInputs.cache
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\obj\Debug\netcoreapp2.0\ComeToTurkey.API.AssemblyInfo.cs
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\bin\Debug\netcoreapp2.0\ComeToTurkey.API.pdb
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\obj\Debug\netcoreapp2.0\ComeToTurkey.API.dll
+C:\Users\Pizayn\source\repos\ComeToTurkey.API\ComeToTurkey.API\obj\Debug\netcoreapp2.0\ComeToTurkey.API.pdb

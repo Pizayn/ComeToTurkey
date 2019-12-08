@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import   "assets/home/fonts/icomoon/style.css";
+
+   @import "assets/home/css/bootstrap.min.css";
+     @import "assets/home/css/magnific-popup.css"; 
+ 
+     @import "assets/home/css/owl.carousel.min.css";
+     @import "assets/home/css/owl.theme.default.min.css";
+
+     @import "assets/home/css/bootstrap-datepicker.css";
+
+     @import "assets/home/fonts/flaticon/font/flaticon.css";
+
+  @import  "https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css";
+
+

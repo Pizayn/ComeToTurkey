@@ -1,0 +1,43 @@
+<div class="comments-area">
+  <h4>{{commentCount}} Comments</h4>
+  <div *ngFor="let item of comments" class="comment-list">
+      <div class="single-comment justify-content-between d-flex">
+          <div class="user justify-content-between d-flex">
+              <div class="thumb">
+                  <img style="width: 62px;height: 64px;" src="{{item.senderPhotoUrl}}" alt="">
+              </div>
+              <div class="desc">
+                  <h5><a [routerLink]="['/user/' + item.senderId]"  >{{item.senderFirstName}}</a></h5>
+                  <p class="date">{{item.sendDate | timeAgo}} </p>
+                  <p class="comment">
+                      {{item.content}}
+                  </p>
+              </div>
+             
+          </div>
+          <div style="margin-left: 100px;" class="reply-btn"  *ngIf="isme(item.senderId)">
+              <a (click)="deleteComment(item.id)" class="btn-reply text-uppercase">X</a>
+          </div>
+          
+      </div>
+  </div>
+ 
+  
+ 
+</div>
+<div class="d-flex justify-content-center">
+  <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [(ngModel)]="pagination.currentPage" 
+          [itemsPerPage]="pagination.itemsPerPage" (pageChanged)="pageChanged($event)"
+          previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+  </pagination>
+</div>
+<div class="comment-form">
+  <h4>Leave a Reply</h4>
+  <form [formGroup]="commentForm" (submit)=sendComment()>
+      <div class="form-group" >
+          <textarea   formControlName="comment" [(ngModel)]="newMessage.content" class="form-control mb-10" rows="5" name="comment" placeholder="Comment"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Comment'" required=""></textarea>
+      </div>
+      <button type="submit" class="primary-btn submit_btn text-uppercase">Send Message</button>
+  </form>
+</div>

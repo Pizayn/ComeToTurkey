@@ -1,0 +1,23 @@
+<div class="site-section">
+      
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 text-center">
+        <h2 class="font-weight-light text-black">Our Destinations</h2>
+        <p class="color-black-opacity-5">Choose Your Next Destination</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" *ngFor="let item of destinations">
+        <a href="#" class="unit-1 text-center">
+          <img src="{{item.mainPhotoUrl}}" style="width: 350px;height: 400px;" alt="Image" class="img-fluid">
+          <div class="unit-1-text">
+            <h3 class="unit-1-heading">{{item.regionName}}</h3>
+          </div>
+        </a>
+      </div>
+    
+    </div>
+  </div>
+
+</div>

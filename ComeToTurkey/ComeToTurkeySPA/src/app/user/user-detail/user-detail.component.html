@@ -1,0 +1,79 @@
+
+<div class="container mt-4" >
+    <h1 style="margin-bottom: 50px;"> Profile {{user.firstName}}</h1>
+  <div class="row">
+      <div class="col-md-4">
+          <div class="card card-profile">
+              <div class="card-avatar">
+                  <a href="javascript:void(0)">
+                      <img class="img" src="{{user.photoUrl}}" />
+                  </a>
+              </div>
+              <div class="card-body">
+                  <h6 class="card-category text-gray">{{user.username}}</h6>
+                  <h4 class="card-title">{{user.firstName}}  {{user.lastName}}</h4>
+                  <p class="card-description">
+                    {{user.status}}
+                  </p>
+                 
+                    <div>
+                      <strong>Age:</strong>
+                      <p>{{user.age}}</p>
+                    </div>
+                    <div>
+                        <strong>About Me</strong>
+                        <p>{{user.aboutMe}}</p>
+                      </div>
+                      <div>
+                          <strong>Member since:</strong>
+                          <p>{{user.created | date}}</p>
+                        </div>
+                        
+              </div>
+              <div class="card-footer">
+                  <div class="btn-group d-flex">
+                    <button *ngIf="!isFollowExist()" (click)="sendFollows(user.id)" class="btn btn-primary w-100">Follow</button>
+                    <button *ngIf="isFollowExist()" (click)="sendUnFollows(user.id)"  class="btn btn-primary w-100">Unfollow</button>
+                    <button class="btn btn-success w-100" (click)="selectTab(3)">Message</button>
+                  </div>
+                </div>
+          </div>
+      </div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+        <tabset class="member-tabset" #memberTabs>  
+          <!-- member tabset css dir -->
+          <tab heading="About">
+            <form>
+              <h4>About Me</h4>
+              <textarea style="background-color: white;" name="introduction" disabled="true" rows="6" class="form-control" [(ngModel)]="user.aboutMe"></textarea>
+              <h4>Looking For</h4>
+              <textarea style="background-color: white;" name="lookingFor"disabled="true" rows="6" class="form-control" [(ngModel)]="user.status"></textarea>
+              <h4>Interests</h4>
+              <textarea style="background-color: white;"  name="interests"disabled="true" rows="6" class="form-control" [(ngModel)]="user.age"></textarea>
+              <h4>Location Details:</h4>
+              <!-- <div class="form-inline">
+                <label for="city">City</label>
+                <input style="background-color: white;" type="text"disabled="true" class="form-control" name="city" [(ngModel)]="user.city">
+                <label for="country">Country</label>
+                <input style="background-color: white;" type="text"disabled="true" class="form-control" name="country" [(ngModel)]="user.country">
+              </div> -->
+          </form>
+          </tab>
+          <tab heading="Interests">
+            <h4>Interests</h4>
+              <p></p>
+          </tab>
+          <tab heading="Photos">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+          </tab>
+          <tab heading="Messages">
+            
+              <app-user-messages [recipientId]="user.id"></app-user-messages>
+            </tab>
+        </tabset>
+      </div>
+    </div>
+    
+  </div>
+</div>
